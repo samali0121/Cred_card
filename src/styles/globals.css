@@ -372,7 +372,7 @@ Media Quries
         width: 100%;
         left: 0px;
     } */
-    .single_card {
+    /* .single_card {
         position: relative;
         height: 100vh;
     }
@@ -383,7 +383,7 @@ Media Quries
         pointer-events: none;
         width: 100%;
         left: 0px;
-    }
+    } */
 }
 
 @media only screen and (max-width: 475px) {
