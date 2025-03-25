@@ -1,0 +1,198 @@
+@import url("https://fonts.cdnfonts.com/css/gilroy-bold");
+
+* {
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+    /* font-family: "Gilroy-Bold", sans-serif;
+    font-family: "Gilroy-Heavy", sans-serif;
+    font-family: "Gilroy-Light", sans-serif;
+    font-family: "Gilroy-Medium", sans-serif;
+    font-family: "Gilroy-Regular", sans-serif; */
+}
+
+/* ======================= Headings ============================= */
+.head-1 {
+    background: linear-gradient(170deg, rgb(0, 0, 0), rgb(85, 85, 85)) text;
+    -webkit-text-fill-color: transparent;
+    padding: 4px 0px;
+    white-space: pre-wrap;
+    font-family: denton;
+    font-size: 88px;
+    font-weight: 800;
+    letter-spacing: -0.6px;
+    line-height: 87px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+/* ================================== Hero Section ================================ */
+.hero-main {
+    position: relative;
+    top: -100px;
+}
+.header_mian {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    padding: 70px 130px;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: transparent;
+    z-index: 11;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    transition: top 0.5s;
+}
+
+.hero_inn {
+    place-content: flex-start center;
+    background-color: rgb(0, 0, 0);
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    min-height: 100vh;
+    position: relative;
+    z-index: 2;
+}
+.hero_inn video {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    width: 100%;
+}
+.head-4 {
+    font-family: "Gilroy-Medium", sans-serif;
+    font-weight: initial;
+    font-size: 17px;
+    letter-spacing: 4px;
+    line-height: 32px;
+    text-transform: uppercase;
+    color: rgb(108, 108, 108);
+    white-space: pre-wrap;
+}
+
+/* ============================== MultiCard Section ============================= */
+
+.mc-text {
+    white-space: pre-wrap;
+    font-family: "Gilroy-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: initial;
+    letter-spacing: 0.6px;
+    line-height: 36px;
+    opacity: 0.6;
+    white-space: pre-line;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.mt_main {
+    width: 70%;
+    margin: 0 auto;
+}
+/* =========================== Cards Steps ====================== */
+.card-steps {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    padding: 125px 0;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.dYlzCk {
+    background: linear-gradient(170deg, rgb(0, 0, 0), rgb(85, 85, 85)) text;
+    -webkit-text-fill-color: transparent;
+}
+.fquCfu {
+    font-family: denton;
+    font-size: 67px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    line-height: 65px;
+    text-align: left;
+}
+.lbxDUD {
+    margin-left: 10px;
+    text-align: left;
+}
+.hrudQH {
+    margin-bottom: calc(40px);
+}
+.hHnUWF {
+    display: flex;
+    width: 100%;
+}
+.hHnUWF > div {
+    flex-shrink: 0;
+    margin-right: 20px;
+    width: 32%;
+}
+.edROEC {
+    user-select: none;
+    width: 100%;
+    object-fit: cover;
+}
+.hdDaEA {
+    margin-bottom: calc(15px);
+}
+.hpTdVv {
+    display: flex;
+    align-items: flex-start;
+}
+.fBRsjM {
+    width: 32px;
+    height: 32px;
+}
+.kkVKoh {
+    font-family: "Gilroy-Bold", sans-serif;
+    font-size: 15px;
+    font-weight: initial;
+    letter-spacing: 2.15px;
+    line-height: 28px;
+}
+.buBswu {
+    font-family: "Gilroy-Regular", sans-serif;
+    font-size: 15px;
+    font-weight: initial;
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    opacity: 0.6;
+}
+video {
+    width: 100%;
+}
+/* ====================================================================================================
+Media Quries
+==================================================================================================== */
+@media only screen and (max-width: 1024px) {
+    .hHnUWF {
+        overflow-x: auto;
+        /* scrollbar-width: none; */
+    }
+    .edROEC {
+        width: 323px;
+        max-height: 466px;
+    }
+    .edROEC {
+        user-select: none;
+        width: 100%;
+        object-fit: cover;
+    }
+}
