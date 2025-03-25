@@ -352,7 +352,7 @@ Media Quries
     .hHnUWF {
         padding: 0px 30px;
     }
-    .mc_inn {
+    /* .mc_inn {
         position: relative;
         height: 100vh;
     }
@@ -363,7 +363,7 @@ Media Quries
         pointer-events: none;
         width: 100%;
         left: 0px;
-    }
+    } */
     .single_card {
         position: relative;
         height: 100vh;
