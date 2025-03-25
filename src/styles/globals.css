@@ -302,7 +302,7 @@ Media Quries
     }
     .hHnUWF {
         overflow-x: auto;
-        /* scrollbar-width: none; */
+        scrollbar-width: none;
     }
 
     .hHnUWF > div {
@@ -332,6 +332,7 @@ Media Quries
     }
     .video-div {
         min-height: 500px;
+        overflow: hidden;
     }
     .mt_main {
         width: 100%;
@@ -342,6 +343,10 @@ Media Quries
     }
     .czXzVu {
         padding: 0px 30px;
+    }
+    .fquCfu {
+        font-size: 40px;
+        line-height: 37px;
     }
 }
 
