@@ -76,7 +76,7 @@ export default function MultiCard() {
                 </div>
                 <div className="mob-video">
                     <video ref={videoRef} autoPlay muted onEnded={handleVideoEnd}>
-                        <source src="/assets/multi-card-desktop-video.mp4" type="video/mp4" />
+                        <source src="/assets/multi-card-mobile-video.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
