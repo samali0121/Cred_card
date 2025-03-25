@@ -11,7 +11,9 @@ body {
     font-family: "Gilroy-Medium", sans-serif;
     font-family: "Gilroy-Regular", sans-serif; */
 }
-
+.mob-video {
+    display: none;
+}
 /* ======================= Headings ============================= */
 .head-1 {
     background: linear-gradient(170deg, rgb(0, 0, 0), rgb(85, 85, 85)) text;
@@ -321,6 +323,12 @@ Media Quries
 }
 
 @media only screen and (max-width: 768px) {
+    .mob-video {
+        display: block;
+    }
+    .web-video {
+        display: none;
+    }
     .hero-main {
         top: 0;
     }

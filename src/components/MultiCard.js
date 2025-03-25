@@ -68,10 +68,18 @@ export default function MultiCard() {
                         <p className="mc-text">you can put your admin duties to rest. for good.</p>
                     </div>
                 </div>
-                <video ref={videoRef} autoPlay muted onEnded={handleVideoEnd}>
-                    <source src="/assets/multi-card-desktop-video.mp4" type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
+                <div className="web-video">
+                    <video ref={videoRef} autoPlay muted onEnded={handleVideoEnd}>
+                        <source src="/assets/multi-card-desktop-video.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div className="mob-video">
+                    <video ref={videoRef} autoPlay muted onEnded={handleVideoEnd}>
+                        <source src="/assets/multi-card-desktop-video.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
         </div>
     );
