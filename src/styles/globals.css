@@ -276,6 +276,30 @@ video {
 Media Quries
 ==================================================================================================== */
 @media only screen and (max-width: 1024px) {
+    .header_mian {
+        padding: 22px 30px;
+    }
+    .mt_main {
+        width: 80%;
+    }
+    .head-1 {
+        font-size: 60px;
+        line-height: 60px;
+    }
+    .head-4 {
+        font-size: 14px;
+    }
+    .mc-text {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    .gGwbWp {
+        padding: 60px;
+    }
+    .fquCfu {
+        font-size: 50px;
+        line-height: 44px;
+    }
     .hHnUWF {
         overflow-x: auto;
         /* scrollbar-width: none; */
@@ -293,4 +317,33 @@ Media Quries
         letter-spacing: 1.58px;
         line-height: 27px;
     }
+}
+
+@media only screen and (max-width: 768px) {
+    .hero-main {
+        top: 0;
+    }
+    .head-1 {
+        font-size: 45px;
+        line-height: 46px;
+    }
+    .header_mian {
+        padding: 20px;
+    }
+    .video-div {
+        min-height: 500px;
+    }
+    .mt_main {
+        width: 100%;
+        padding: 40px 0 0 0;
+    }
+    .gGwbWp {
+        padding: 60px 0px;
+    }
+    .czXzVu {
+        padding: 0px 30px;
+    }
+}
+
+@media only screen and (max-width: 475px) {
 }
