@@ -102,7 +102,101 @@ body {
     margin: 0 auto;
 }
 /* =========================== Cards Steps ====================== */
-.card-steps {
+.gGwbWp {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    padding: 125px;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.jDYudt {
+    background-color: red;
+    z-index: 2;
+    position: absolute;
+    top: -70vh;
+    height: 3px;
+}
+.dYlzCk {
+    background: linear-gradient(170deg, rgb(0, 0, 0), rgb(85, 85, 85)) text;
+    -webkit-text-fill-color: transparent;
+}
+.fquCfu {
+    font-family: denton;
+    font-size: 67px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+    line-height: 65px;
+    text-align: left;
+}
+.hrudQH {
+    margin-bottom: calc(40px);
+}
+.hHnUWF {
+    display: flex;
+    width: 100%;
+}
+.hHnUWF > div {
+    flex-shrink: 0;
+    margin-right: 20px;
+    width: 32%;
+}
+.gGwbWp {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background-color: rgb(255, 255, 255);
+    padding: 125px;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    -webkit-box-pack: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.edROEC {
+    user-select: none;
+    width: 100%;
+    object-fit: cover;
+}
+.hdDaEA {
+    margin-bottom: calc(15px);
+}
+.hpTdVv {
+    display: flex;
+    align-items: flex-start;
+}
+.fBRsjM {
+    width: 32px;
+    height: 32px;
+}
+.lbxDUD {
+    margin-left: 10px;
+    text-align: left;
+}
+.kkVKoh {
+    font-family: "Gilroy-Bold", sans-serif;
+    font-size: 15px;
+    font-weight: initial;
+    letter-spacing: 2.15px;
+    line-height: 28px;
+}
+.buBswu {
+    font-family: "Gilroy-Regular", sans-serif;
+    font-size: 15px;
+    font-weight: initial;
+    letter-spacing: 0.5px;
+    line-height: 28px;
+    opacity: 0.6;
+}
+/* .card-steps {
     position: relative;
     width: 100vw;
     min-height: 100vh;
@@ -174,7 +268,7 @@ body {
     letter-spacing: 0.5px;
     line-height: 28px;
     opacity: 0.6;
-}
+} */
 video {
     width: 100%;
 }
@@ -186,13 +280,17 @@ Media Quries
         overflow-x: auto;
         /* scrollbar-width: none; */
     }
+
+    .hHnUWF > div {
+        width: 323px;
+    }
     .edROEC {
         width: 323px;
         max-height: 466px;
     }
-    .edROEC {
-        user-select: none;
-        width: 100%;
-        object-fit: cover;
+    .kkVKoh {
+        font-size: 15px;
+        letter-spacing: 1.58px;
+        line-height: 27px;
     }
 }
