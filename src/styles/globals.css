@@ -11,6 +11,9 @@ body {
     font-family: "Gilroy-Medium", sans-serif;
     font-family: "Gilroy-Regular", sans-serif; */
 }
+a {
+    text-decoration: none;
+}
 .mob-video {
     display: none;
 }
@@ -284,6 +287,141 @@ canvas {
     top: 0px;
     right: 0px;
     overflow: hidden;
+}
+.cSektw {
+    font-family: gilroy-bold;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    letter-spacing: 6px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.8);
+}
+.hOXrWh {
+    font-family: gilroy-regular;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 44px;
+    letter-spacing: 0.3px;
+    text-align: left;
+    color: rgba(255, 255, 255, 0.3);
+}
+.hIVSUW {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+.gmVWof {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 45px;
+}
+.fr-cols {
+    width: 100%;
+    display: flex;
+    flex: 0 1 33.33%;
+    gap: 25px;
+}
+.hWCCxT {
+    display: flex;
+    column-gap: 40px;
+}
+.iMXKCx {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.dtEhqm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 100px;
+}
+.eeTlTA {
+    width: 100%;
+    display: flex;
+    flex: 0 1 33.33%;
+    gap: 25px;
+}
+.biUoey {
+    margin-top: auto;
+    margin-bottom: 20px;
+    width: 310px;
+}
+.dDPGkn {
+    color: rgb(255, 255, 255);
+    opacity: 0.8;
+    font-size: 20px;
+    font-style: normal;
+    font-family: "Gilroy-Regular", sans-serif;
+    font-weight: 600;
+    line-height: 31.5px;
+    letter-spacing: 0.8px;
+}
+.dshbKH {
+    padding-top: 50px;
+    max-width: 500px;
+    font-family: "Gilroy-Regular", sans-serif;
+    color: rgb(255, 255, 255);
+    opacity: 0.3;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    letter-spacing: 0.2px;
+}
+.hXmhLb {
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    width: 100%;
+    padding-top: 50px;
+}
+.dTTmuO {
+    border-top: 1px solid rgb(255, 255, 255);
+    opacity: 0.2;
+    width: 100%;
+    margin: auto;
+}
+.edGIvt {
+    display: flex;
+    width: 100%;
+}
+.hASeTI {
+    width: 100%;
+    font-family: "Gilroy-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0.1px;
+    text-align: start;
+    color: rgb(255, 255, 255);
+    opacity: 0.25;
+}
+.eEBJKd {
+    width: 100%;
+    text-align: end;
+}
+.ItEkq:first-child {
+    padding: 0px 15px 0px 0px;
+}
+.ItEkq {
+    font-family: "Gilroy-Regular", sans-serif;
+    font-size: 20px;
+    width: 100%;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    text-align: end;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    opacity: 0.3;
+    padding: 0px 15px;
+    border-right: 1px solid rgb(246, 246, 246);
+}
+.ItEkq:last-child {
+    border-right: none;
 }
 /* ====================================================================================================
 Media Quries
