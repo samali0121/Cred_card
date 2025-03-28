@@ -1162,6 +1162,9 @@ Media Quries
     .ioROUa {
         margin-top: 6px;
     }
+    .menu {
+        height: 100%;
+    }
 }
 @media only screen and (max-width: 890px) {
     .eojfPz {
