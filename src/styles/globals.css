@@ -646,13 +646,13 @@ Media Quries
         width: 70px;
     }
     .accordion-item {
-        border-color: #212122;
+        border-color: #212122 !important;
     }
     .accordion-button {
         padding: 2rem 1.25rem;
     }
     .accordion-header:first-child {
-        border-top: 1px solid #212122;
+        border-top: 1px solid #212122 !important;
     }
 
     .accordion-button.collapsed {
@@ -670,10 +670,10 @@ Media Quries
         font-weight: 600;
     }
     button:focus:not(:focus-visible) {
-        box-shadow: none;
+        box-shadow: none !important;
     }
     .accordion-button:not(.collapsed) {
-        box-shadow: none;
+        box-shadow: none !important;
     }
     .fxtUOJ {
         display: block;
