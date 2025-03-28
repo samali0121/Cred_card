@@ -667,6 +667,9 @@ Media Quries
     .hHnUWF {
         padding: 0px 30px;
     }
+    .footer-mob {
+        padding: 10px;
+    }
 }
 
 @media only screen and (max-width: 475px) {
