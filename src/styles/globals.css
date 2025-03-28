@@ -17,6 +17,9 @@ a {
 .mob-video {
     display: none;
 }
+.footer-mob {
+    display: none;
+}
 /* ======================= Headings ============================= */
 .head-1 {
     background: linear-gradient(170deg, rgb(0, 0, 0), rgb(85, 85, 85)) text;
@@ -423,10 +426,45 @@ canvas {
 .ItEkq:last-child {
     border-right: none;
 }
+.kZYrTa {
+    width: 100%;
+    position: relative;
+}
+.fGWPNN {
+    position: absolute;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgb(0, 0, 0);
+    font-family: "Gilroy-Regular", sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    top: -11px;
+    left: 125px;
+    padding: 5px 10px;
+    font-size: 7.486px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 12.833px;
+    letter-spacing: 2.139px;
+}
 /* ====================================================================================================
 Media Quries
 ==================================================================================================== */
 @media only screen and (max-width: 1024px) {
+    .f-logo img {
+        width: 60px;
+    }
+    .footer-web {
+        display: none;
+    }
+    .footer-mob {
+        display: block;
+    }
     .header_mian {
         padding: 22px 30px;
     }
@@ -467,6 +505,127 @@ Media Quries
         font-size: 15px;
         letter-spacing: 1.58px;
         line-height: 27px;
+    }
+    .footer-mob {
+        padding: 30px;
+    }
+    .gpkda-d {
+        display: flex;
+        flex-direction: column;
+        row-gap: 70px;
+    }
+    .dDtJaW {
+        width: 70px;
+    }
+    .accordion-item {
+        border-color: #212122;
+    }
+    .accordion-button {
+        padding: 2rem 1.25rem;
+    }
+    .accordion-header:first-child {
+        border-top: 1px solid #212122;
+    }
+
+    .accordion-button.collapsed {
+        background: #000000;
+        letter-spacing: 3.7px;
+        font-family: "Gilroy-Regular", sans-serif;
+        font-size: 15.12px;
+        font-weight: 600;
+        color: rgb(255, 255, 255);
+    }
+    .accordion-button:not(.collapsed) {
+        background: #000000;
+        color: #ffffff;
+        font-size: 15.12px;
+        font-weight: 600;
+    }
+    button:focus:not(:focus-visible) {
+        box-shadow: none;
+    }
+    .accordion-button:not(.collapsed) {
+        box-shadow: none;
+    }
+    .fxtUOJ {
+        display: block;
+    }
+    .iVMOIf {
+        padding: 15px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 10px;
+        text-align: left;
+    }
+    .chnNEb {
+        font-family: "Gilroy-Regular", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        letter-spacing: 0.2px;
+        text-align: left;
+        color: rgb(255, 255, 255);
+        opacity: 0.3;
+    }
+    .accordion-body {
+        background: #000000;
+    }
+    .jRDYxF {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        justify-content: center;
+    }
+    .bRqPOs {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        width: 180px;
+    }
+    .jCLEdc {
+        font-family: "Gilroy-Regular", sans-serif;
+        font-size: 12.02px;
+        font-weight: 600;
+        line-height: 18.94px;
+        letter-spacing: 0.4px;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        opacity: 0.8;
+    }
+    .ibJIKQ {
+        font-family: "Gilroy-Regular", sans-serif;
+        font-size: 12.02px;
+        font-weight: 500;
+        line-height: 19.24px;
+        letter-spacing: 0.12px;
+        text-align: center;
+        color: rgb(255, 255, 255);
+        opacity: 0.3;
+        margin-top: 25px;
+    }
+    .fPKvjU {
+        width: 100%;
+        text-align: center;
+    }
+    .fPKvjU > :first-child {
+        border-right: 1px solid rgb(246, 246, 246);
+    }
+    .hWryAZ {
+        font-family: "Gilroy-Regular", sans-serif;
+        font-size: 12.02px;
+        font-weight: 500;
+        line-height: 19.24px;
+        letter-spacing: 0px;
+        text-align: left;
+        color: rgb(255, 255, 255);
+        opacity: 0.45;
+        padding: 0px 15px;
+    }
+    .fPKvjU > * {
+        border-right: none;
     }
 }
 
@@ -511,4 +670,8 @@ Media Quries
 }
 
 @media only screen and (max-width: 475px) {
+    .iVMOIf {
+        display: flex;
+        flex-flow: column wrap;
+    }
 }
