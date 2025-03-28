@@ -25,8 +25,8 @@ export default function Footer() {
                                 </div>
                                 <div className="sc-1sojafr-12 dtEhqm">
                                     {/* Left Side */}
-                                    <div class="sc-ircsn8-14 kZYrTa">
-                                        <div class="sc-ircsn8-15 fGWPNN">now live</div>
+                                    <div className="sc-ircsn8-14 kZYrTa">
+                                        <div className="sc-ircsn8-15 fGWPNN">now live</div>
                                         <img className="w-100 sc-1sojafr-17 hIVSUW" src="/assets/now-live-wide.webp" alt="Footer Logo" />
                                     </div>
                                     {/* Right Side */}
@@ -221,15 +221,15 @@ export default function Footer() {
                                 </div>
                             </div>
                             {/* Copyright */}
-                            <div class="sc-1sojafr-14 hXmhLb">
-                                <div class="sc-1sojafr-13 dTTmuO"></div>
-                                <div class="sc-1sojafr-18 edGIvt">
-                                    <div class="sc-1sojafr-21 hASeTI">copyright © 2020-24 Dreamplug Technologies Pvt Ltd.</div>
-                                    <div class="sc-1sojafr-20 eEBJKd">
-                                        <a href="https://cred.club/privacy" target="_blank" class="sc-1sojafr-7 ItEkq">
+                            <div className="sc-1sojafr-14 hXmhLb">
+                                <div className="sc-1sojafr-13 dTTmuO"></div>
+                                <div className="sc-1sojafr-18 edGIvt">
+                                    <div className="sc-1sojafr-21 hASeTI">copyright © 2020-24 Dreamplug Technologies Pvt Ltd.</div>
+                                    <div className="sc-1sojafr-20 eEBJKd">
+                                        <a href="https://cred.club/privacy" target="_blank" className="sc-1sojafr-7 ItEkq">
                                             privacy policy
                                         </a>
-                                        <a href="https://cred.club/terms" target="_blank" class="sc-1sojafr-7 ItEkq">
+                                        <a href="https://cred.club/terms" target="_blank" className="sc-1sojafr-7 ItEkq">
                                             terms and conditions
                                         </a>
                                     </div>
@@ -238,20 +238,20 @@ export default function Footer() {
                         </div>
                         {/* Mob Footer Footer */}
                         <div className="footer-mob gpkda-d">
-                            <div class="sc-ircsn8-14 kZYrTa">
-                                <div class="sc-ircsn8-15 fGWPNN">now live</div>
+                            <div className="sc-ircsn8-14 kZYrTa">
+                                <div className="sc-ircsn8-15 fGWPNN">now live</div>
                                 <img className="w-100 sc-1sojafr-17 hIVSUW" src="/assets/now-live-wide.webp" alt="Footer Logo" />
                             </div>
                             {/* Logo */}
                             <div className="f-logo">
                                 <img className="dDtJaW" src="/assets/footer-logo.png" alt="Footer Logo" />
                             </div>
-                            <div class="accordion accordion-flush" id="accordionFlushExample">
+                            <div className="accordion accordion-flush" id="accordionFlushExample">
                                 {/* Item 1 */}
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingOne">
+                                <div className="accordion-item">
+                                    <h2 className="accordion-header" id="flush-headingOne">
                                         <button
-                                            class="accordion-button collapsed"
+                                            className="accordion-button collapsed"
                                             type="button"
                                             data-bs-toggle="collapse"
                                             data-bs-target="#flush-collapseOne"
@@ -261,27 +261,27 @@ export default function Footer() {
                                             UPGRADES
                                         </button>
                                     </h2>
-                                    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <div class="sc-ircsn8-5 fxtUOJ">
-                                                <div class="sc-ircsn8-6 iVMOIf">
+                                    <div id="flush-collapseOne" className="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div className="accordion-body">
+                                            <div className="sc-ircsn8-5 fxtUOJ">
+                                                <div className="sc-ircsn8-6 iVMOIf">
                                                     <div>
-                                                        <a href="https://cred.club/money" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                        <a href="https://cred.club/money" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                             CRED money
                                                         </a>
                                                     </div>
                                                     <div>
-                                                        <a href="https://cred.club/mint" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                        <a href="https://cred.club/mint" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                             CRED mint
                                                         </a>
                                                     </div>
                                                     <div>
-                                                        <a href="https://cred.club/garage" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                        <a href="https://cred.club/garage" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                             CRED garage
                                                         </a>
                                                     </div>
                                                     <div>
-                                                        <a href="https://cred.club/escapes" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                        <a href="https://cred.club/escapes" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                             CRED escapes
                                                         </a>
                                                     </div>
@@ -291,10 +291,10 @@ export default function Footer() {
                                     </div>
                                 </div>
                                 {/* Item 2 */}
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingTwo">
+                                <div className="accordion-item">
+                                    <h2 className="accordion-header" id="flush-headingTwo">
                                         <button
-                                            class="accordion-button collapsed"
+                                            className="accordion-button collapsed"
                                             type="button"
                                             data-bs-toggle="collapse"
                                             data-bs-target="#flush-collapseTwo"
@@ -304,16 +304,16 @@ export default function Footer() {
                                             COMPANY
                                         </button>
                                     </h2>
-                                    <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <div class="sc-ircsn8-6 iVMOIf">
+                                    <div id="flush-collapseTwo" className="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                        <div className="accordion-body">
+                                            <div className="sc-ircsn8-6 iVMOIf">
                                                 <div>
-                                                    <a href="https://cred.club/about" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/about" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         about CRED
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://careers.cred.club/openings" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://careers.cred.club/openings" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         careers
                                                     </a>
                                                 </div>
@@ -322,10 +322,10 @@ export default function Footer() {
                                     </div>
                                 </div>
                                 {/* Item 3 */}
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingFour">
+                                <div className="accordion-item">
+                                    <h2 className="accordion-header" id="flush-headingFour">
                                         <button
-                                            class="accordion-button collapsed"
+                                            className="accordion-button collapsed"
                                             type="button"
                                             data-bs-toggle="collapse"
                                             data-bs-target="#flush-collapseFour"
@@ -335,11 +335,11 @@ export default function Footer() {
                                             INSIDER PERKS
                                         </button>
                                     </h2>
-                                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <div class="sc-ircsn8-6 iVMOIf">
+                                    <div id="flush-collapseFour" className="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                        <div className="accordion-body">
+                                            <div className="sc-ircsn8-6 iVMOIf">
                                                 <div>
-                                                    <a href="https://cred.club/ipl" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/ipl" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         upgrade to UPI
                                                     </a>
                                                 </div>
@@ -348,10 +348,10 @@ export default function Footer() {
                                     </div>
                                 </div>
                                 {/* Item 4 */}
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingThree">
+                                <div className="accordion-item">
+                                    <h2 className="accordion-header" id="flush-headingThree">
                                         <button
-                                            class="accordion-button collapsed"
+                                            className="accordion-button collapsed"
                                             type="button"
                                             data-bs-toggle="collapse"
                                             data-bs-target="#flush-collapseThree"
@@ -361,26 +361,26 @@ export default function Footer() {
                                             PAYMENTS
                                         </button>
                                     </h2>
-                                    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <div class="sc-ircsn8-6 iVMOIf">
+                                    <div id="flush-collapseThree" className="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                        <div className="accordion-body">
+                                            <div className="sc-ircsn8-6 iVMOIf">
                                                 <div>
-                                                    <a href="https://cred.club/cred-pay" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/cred-pay" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         Scan &amp; Pay
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/tap" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/tap" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         Tap to Pay
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/pay-via-upi" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/pay-via-upi" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         Pay anyone
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/upi-on-credit" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/upi-on-credit" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         RuPay cards on UPI
                                                     </a>
                                                 </div>
@@ -389,10 +389,10 @@ export default function Footer() {
                                     </div>
                                 </div>
                                 {/* Item 5 */}
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingFive">
+                                <div className="accordion-item">
+                                    <h2 className="accordion-header" id="flush-headingFive">
                                         <button
-                                            class="accordion-button collapsed"
+                                            className="accordion-button collapsed"
                                             type="button"
                                             data-bs-toggle="collapse"
                                             data-bs-target="#flush-collapseFive"
@@ -402,46 +402,46 @@ export default function Footer() {
                                             RESOURCES
                                         </button>
                                     </h2>
-                                    <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <div class="sc-ircsn8-6 iVMOIf">
+                                    <div id="flush-collapseFive" className="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                                        <div className="accordion-body">
+                                            <div className="sc-ircsn8-6 iVMOIf">
                                                 <div>
-                                                    <a href="https://cred.club/cred-pay/onboarding" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/cred-pay/onboarding" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         partner with us
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/calculators" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/calculators" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         calculators
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/articles" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/articles" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         articles
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://engineering.cred.club" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://engineering.cred.club" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         tech blog
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/check-your-credit-score/articles" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/check-your-credit-score/articles" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         credit score guide
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/credit-card-bill-payment-online/articles" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/credit-card-bill-payment-online/articles" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         credit card payment guide
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/customer-care" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/customer-care" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         customer care
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://zfrmz.in/10ASsFdqjAnCiBMpakMX" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://zfrmz.in/10ASsFdqjAnCiBMpakMX" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         Dreampurse (HipBar) wallet refund form
                                                     </a>
                                                 </div>
@@ -450,10 +450,10 @@ export default function Footer() {
                                     </div>
                                 </div>
                                 {/* Item 6 */}
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingSix">
+                                <div className="accordion-item">
+                                    <h2 className="accordion-header" id="flush-headingSix">
                                         <button
-                                            class="accordion-button collapsed"
+                                            className="accordion-button collapsed"
                                             type="button"
                                             data-bs-toggle="collapse"
                                             data-bs-target="#flush-collapseSix"
@@ -463,46 +463,46 @@ export default function Footer() {
                                             POLICY
                                         </button>
                                     </h2>
-                                    <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <div class="sc-ircsn8-6 iVMOIf">
+                                    <div id="flush-collapseSix" className="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                        <div className="accordion-body">
+                                            <div className="sc-ircsn8-6 iVMOIf">
                                                 <div>
-                                                    <a href="https://cred.club/transaction-and-user-verification-policy" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/transaction-and-user-verification-policy" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         transaction &amp; user verification
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/privacy#compliance-with-google-oauth-api-scopes" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/privacy#compliance-with-google-oauth-api-scopes" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         Google API disclosure{" "}
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/upi-faqs" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/upi-faqs" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         UPI FAQ &amp; grievances
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/return-policy" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/return-policy" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         returns and refunds
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/security" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/security" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         security
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://web-assets.cred.club/assets/docs/eop.pdf" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://web-assets.cred.club/assets/docs/eop.pdf" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         equal opportunity policy
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/investor-relations" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/investor-relations" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         investor relations
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/legal/other-disclosures" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/legal/other-disclosures" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         other disclosures
                                                     </a>
                                                 </div>
@@ -511,10 +511,10 @@ export default function Footer() {
                                     </div>
                                 </div>
                                 {/* Item 7 */}
-                                <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-headingSeven">
+                                <div className="accordion-item">
+                                    <h2 className="accordion-header" id="flush-headingSeven">
                                         <button
-                                            class="accordion-button collapsed"
+                                            className="accordion-button collapsed"
                                             type="button"
                                             data-bs-toggle="collapse"
                                             data-bs-target="#flush-collapseSeven"
@@ -524,16 +524,16 @@ export default function Footer() {
                                             DESIGN
                                         </button>
                                     </h2>
-                                    <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">
-                                            <div class="sc-ircsn8-6 iVMOIf">
+                                    <div id="flush-collapseSeven" className="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
+                                        <div className="accordion-body">
+                                            <div className="sc-ircsn8-6 iVMOIf">
                                                 <div>
-                                                    <a href="https://cred.club/neopop" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/neopop" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         NeoPOP
                                                     </a>
                                                 </div>
                                                 <div>
-                                                    <a href="https://cred.club/design" target="_blank" class="sc-ircsn8-8 chnNEb">
+                                                    <a href="https://cred.club/design" target="_blank" className="sc-ircsn8-8 chnNEb">
                                                         manifesto
                                                     </a>
                                                 </div>
@@ -543,29 +543,29 @@ export default function Footer() {
                                 </div>
                             </div>
                             {/* Logos Image Section */}
-                            <div class="sc-ircsn8-18 jRDYxF">
+                            <div className="sc-ircsn8-18 jRDYxF">
                                 <img
-                                    class="sc-ircsn8-9 bRqPOs lozad"
+                                    className="sc-ircsn8-9 bRqPOs lozad"
                                     data-src="https://web-images.credcdn.in/v2/_next/assets/images/landing/security-final-2.png"
                                     alt="security logo"
                                     src="https://web-images.credcdn.in/v2/_next/assets/images/landing/security-final-2.png"
                                     data-loaded="true"
                                 />
-                                <div class="sc-ircsn8-3 jCLEdc">complete security. no asterisks.</div>
-                                <div class="sc-ircsn8-4 ibJIKQ">
+                                <div className="sc-ircsn8-3 jCLEdc">complete security. no asterisks.</div>
+                                <div className="sc-ircsn8-4 ibJIKQ">
                                     CRED encrypts all data and transactions to ensure a <br />
                                     completely secure experience for our members.
                                 </div>
                             </div>
                             {/* Copyright */}
-                            <div class="sc-ircsn8-19 fPKvjU">
-                                <a href="https://cred.club/privacy" target="_blank" class="sc-ircsn8-11 hWryAZ">
+                            <div className="sc-ircsn8-19 fPKvjU">
+                                <a href="https://cred.club/privacy" target="_blank" className="sc-ircsn8-11 hWryAZ">
                                     privacy policy
                                 </a>
-                                <a href="https://cred.club/terms" target="_blank" class="sc-ircsn8-11 hWryAZ">
+                                <a href="https://cred.club/terms" target="_blank" className="sc-ircsn8-11 hWryAZ">
                                     terms and conditions
                                 </a>
-                                <div class="sc-ircsn8-2 iNUVpx">copyright © 2020-24 Dreamplug Technologies Pvt Ltd.</div>
+                                <div className="sc-ircsn8-2 iNUVpx">copyright © 2020-24 Dreamplug Technologies Pvt Ltd.</div>
                             </div>
                         </div>
                     </div>
