@@ -675,6 +675,13 @@ Media Quries
     .accordion-button:not(.collapsed) {
         box-shadow: none !important;
     }
+    .accordion-button:after {
+        background-image: url("/assets/plus-icon.webp") !important;
+    }
+    .accordion-button:not(.collapsed):after {
+        background-image: url("/assets/cros-icon.webp") !important;
+        --bs-accordion-btn-icon-transform: rotate(-90deg);
+    }
     .fxtUOJ {
         display: block;
     }
