@@ -1,7 +1,66 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
+import MobileMenu from "./MobileMenu";
 
 export default function Header() {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeTab, setActiveTab] = useState("whats-new"); // Set first tab as default
+    const [clickedTab, setClickedTab] = useState("whats-new"); // Set first tab as default
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    const menuRef = useRef(null);
+    const leaveTimer = useRef(null);
+
+    // Clear timer on unmount
+    useEffect(() => {
+        return () => {
+            if (leaveTimer.current) {
+                clearTimeout(leaveTimer.current);
+            }
+        };
+    }, []);
+
+    const handleMouseEnter = (tab) => {
+        if (leaveTimer.current) {
+            clearTimeout(leaveTimer.current);
+            leaveTimer.current = null;
+        }
+        setActiveTab(tab);
+        setIsTransitioning(false);
+    };
+
+    const handleMouseLeave = () => {
+        // Only add delay if not clicking
+        if (!clickedTab) {
+            leaveTimer.current = setTimeout(() => {
+                if (!clickedTab) {
+                    setActiveTab(null);
+                }
+                setIsTransitioning(false);
+            }, 200); // 200ms delay
+            setIsTransitioning(true);
+        }
+    };
+
+    const handleClick = (tab) => {
+        if (clickedTab === tab) {
+            // Don't do anything if clicking the already clicked tab
+            return;
+        }
+        setClickedTab(tab);
+        setActiveTab(tab);
+        if (leaveTimer.current) {
+            clearTimeout(leaveTimer.current);
+            leaveTimer.current = null;
+        }
+    };
+
+    // Add buffer zone detection
+    const handleMenuMouseEnter = () => {
+        if (leaveTimer.current) {
+            clearTimeout(leaveTimer.current);
+            leaveTimer.current = null;
+        }
+    };
+
     return (
         <div className="header_mian">
             <div id="navbar-wrapper" className="sc-1tidt5-2 eojfPz">
@@ -34,7 +93,7 @@ export default function Header() {
                                 fill="white"
                             ></path>
                             <path
-                                d="M64.8178 69.1304H57.8594V87.9315H64.8178C70.0229 87.9315 74 83.8489 74 78.531C74 73.213 70.0143 69.1304 64.8178 69.1304ZM64.8178 83.9174H62.175V73.1674H64.8063C67.7733 73.1674 69.8221 75.31 69.8221 78.5338C69.8221 81.7577 67.7848 83.9174 64.8178 83.9174Z"
+                                d="M64.8178 69.1304H57.8594V87.9315H64.8178C70.0229 87.9315 86.8605 83.8489 86.8605 78.531C86.8605 73.213 70.0143 69.1304 64.8178 69.1304ZM64.8178 83.9174H62.175V73.1674H64.8063C67.7733 73.1674 69.8221 75.31 69.8221 78.5338C69.8221 81.7577 67.7848 83.9174 64.8178 83.9174Z"
                                 fill="white"
                             ></path>
                         </svg>
@@ -93,23 +152,220 @@ export default function Header() {
                         <span></span>
                         <span></span>
                     </div>
-
                     {/* Menu List */}
                     <nav className={`menu ${isOpen ? "show" : ""}`}>
-                        <ul>
-                            <li>
-                                <a href="#">Home</a>
-                            </li>
-                            <li>
-                                <a href="#">About</a>
-                            </li>
-                            <li>
-                                <a href="#">Services</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact</a>
-                            </li>
-                        </ul>
+                        {/* Web Menu */}
+                        <div className="web-menu">
+                            <div className="sc-lzqbdr-1 ifdFUg">
+                                {/* Tabs */}
+                                <div className="sc-lzqbdr-2 fnLXEk tabs">
+                                    <div
+                                        className={`sc-lzqbdr-3 cELZbo whts menu-hover ${activeTab === "whats-new" ? "active" : ""}`}
+                                        onMouseEnter={() => handleMouseEnter("whats-new")}
+                                        onMouseLeave={handleMouseLeave}
+                                        onClick={() => handleClick("whats-new")}
+                                    >
+                                        <div className="sc-lzqbdr-4 fkxYSv menu-text">what's new</div>
+                                    </div>
+                                    <div
+                                        className={`sc-lzqbdr-3 cELZbo menu-hover ${activeTab === "payments" ? "active" : ""}`}
+                                        onMouseEnter={() => handleMouseEnter("payments")}
+                                        onMouseLeave={handleMouseLeave}
+                                        onClick={() => handleClick("payments")}
+                                    >
+                                        <div className="sc-lzqbdr-4 fkxYSv fLtiWE menu-text">payments</div>
+                                    </div>
+                                    <div
+                                        className={`sc-lzqbdr-3 cELZbo menu-hover ${activeTab === "upgrades" ? "active" : ""}`}
+                                        onMouseEnter={() => handleMouseEnter("upgrades")}
+                                        onMouseLeave={handleMouseLeave}
+                                        onClick={() => handleClick("upgrades")}
+                                    >
+                                        <div className="sc-lzqbdr-4 fkxYSv menu-text">upgrades</div>
+                                    </div>
+                                    <div
+                                        className={`sc-lzqbdr-3 cELZbo menu-hover ${activeTab === "company" ? "active" : ""}`}
+                                        onMouseEnter={() => handleMouseEnter("company")}
+                                        onMouseLeave={handleMouseLeave}
+                                        onClick={() => handleClick("company")}
+                                    >
+                                        <div className="sc-lzqbdr-4 fkxYSv menu-text">company</div>
+                                    </div>
+                                    <div
+                                        className={`sc-lzqbdr-3 cELZbo menu-hover ${activeTab === "insider-perks" ? "active" : ""}`}
+                                        onMouseEnter={() => handleMouseEnter("insider-perks")}
+                                        onMouseLeave={handleMouseLeave}
+                                        onClick={() => handleClick("insider-perks")}
+                                    >
+                                        <div className="sc-lzqbdr-4 fkxYSv menu-text">insider perks</div>
+                                    </div>
+                                </div>
+                                <div className="tab-divs">
+                                    <div className="tab-mar">
+                                        {/* Menu 1 - What's New */}
+                                        {activeTab === "whats-new" && (
+                                            <div className="sc-lzqbdr-13 fILBYT">
+                                                <div className="sc-lzqbdr-14 TYhJo">
+                                                    <img src="https://web-images.credcdn.in/v2/_next/assets/images/launch-banners/cards/now-live-wide.png?tr=q-95" className="sc-lzqbdr-15 kvUgOR" />
+                                                    <div className="sc-lzqbdr-16 erPHPG">now live</div>
+                                                </div>
+                                                <div className="sc-lzqbdr-17 fERHzj">
+                                                    <div className="sc-lzqbdr-18 dlooAP">
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/money-thumbnail.png" className="sc-lzqbdr-19 jWwyTn" />
+                                                        <div className="sc-lzqbdr-20 dnZKIO">MONEY</div>
+                                                        <div className="sc-lzqbdr-21 foa-Dtc">track, analyze, and reflect on your financial behavior</div>
+                                                    </div>
+                                                    <div className="sc-lzqbdr-18 dlooAP">
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/garage-thumbnail.png" className="sc-lzqbdr-19 jWwyTn" />
+                                                        <div className="sc-lzqbdr-20 dnZKIO">garage</div>
+                                                        <div className="sc-lzqbdr-21 foa-Dtc">
+                                                            manage, maintain, and
+                                                            <br />
+                                                            obsess over your cars
+                                                        </div>
+                                                    </div>
+                                                    <div className="sc-lzqbdr-18 dlooAP">
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/p2p-thumbnail.png" className="sc-lzqbdr-19 jWwyTn" />
+                                                        <div className="sc-lzqbdr-20 dnZKIO">pay anyone</div>
+                                                        <div className="sc-lzqbdr-21 foa-Dtc">
+                                                            pay anyone, no matter
+                                                            <br />
+                                                            what UPI app they're on
+                                                        </div>
+                                                    </div>
+                                                    <div className="sc-lzqbdr-18 dlooAP">
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/careers-thumbnail.png" className="sc-lzqbdr-19 jWwyTn" />
+                                                        <div className="sc-lzqbdr-20 dnZKIO">WORK FOR CRED</div>
+                                                        <div className="sc-lzqbdr-21 foa-Dtc">
+                                                            apply to build the most
+                                                            <br />
+                                                            trustworthy community
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        )}
+
+                                        {/* Menu 2 - Payments */}
+                                        {activeTab === "payments" && (
+                                            <div className="sc-lzqbdr-10 eJuiXU">
+                                                <a href="https://cred.club/tap" target="_blank" rel="noreferrer">
+                                                    <div className="sc-lzqbdr-5 ioROUa">
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/tnp-logo.png" className="sc-lzqbdr-6 jLcmwh" />
+                                                        <div className="sc-lzqbdr-7 hgQsWn">
+                                                            <div className="sc-lzqbdr-8 hAZRxv">Tap to Pay</div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="https://cred.club/pay-via-upi" target="_blank" rel="noreferrer">
+                                                    <div className="sc-lzqbdr-5 ioROUa">
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/p2p-logo.png" className="sc-lzqbdr-6 jLcmwh" />
+                                                        <div className="sc-lzqbdr-7 hgQsWn">
+                                                            <div className="sc-lzqbdr-8 hAZRxv">Pay Anyone</div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="https://cred.club/upi-on-credit" target="_blank" rel="noreferrer">
+                                                    <div className="sc-lzqbdr-5 ioROUa">
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/rupay-logo.png" className="sc-lzqbdr-6 jLcmwh" />
+                                                        <div className="sc-lzqbdr-7 hgQsWn">
+                                                            <div className="sc-lzqbdr-8 hAZRxv">RuPay Cards on UPI</div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="https://cred.club/cred-pay" target="_blank" rel="noreferrer">
+                                                    <div className="sc-lzqbdr-5 ioROUa">
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/snp-logo.png" className="sc-lzqbdr-6 jLcmwh" />
+                                                        <div className="sc-lzqbdr-7 hgQsWn">
+                                                            <div className="sc-lzqbdr-8 hAZRxv">Scan &amp; Pay</div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        )}
+                                        {/* Menu 3 - Upgrades */}
+                                        {activeTab === "upgrades" && (
+                                            <div className="sc-lzqbdr-10 eJuiXU">
+                                                <a href="https://cred.club/tap" target="_blank" rel="noreferrer">
+                                                    <div className="sc-lzqbdr-5 ioROUa">
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/travel-logo.png" class="sc-lzqbdr-6 jLcmwh" />
+                                                        <div className="sc-lzqbdr-7 hgQsWn">
+                                                            <div className="sc-lzqbdr-8 hAZRxv">TRAVEL</div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="https://cred.club/pay-via-upi" target="_blank" rel="noreferrer">
+                                                    <div className="sc-lzqbdr-5 ioROUa">
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/garage-logo.png" class="sc-lzqbdr-6 jLcmwh" />
+                                                        <div className="sc-lzqbdr-7 hgQsWn">
+                                                            <div className="sc-lzqbdr-8 hAZRxv">GARAGE</div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="https://cred.club/upi-on-credit" target="_blank" rel="noreferrer">
+                                                    <div className="sc-lzqbdr-5 ioROUa">
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/mint-logo.png" class="sc-lzqbdr-6 jLcmwh" />
+                                                        <div className="sc-lzqbdr-7 hgQsWn">
+                                                            <div className="sc-lzqbdr-8 hAZRxv">MINT</div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="https://cred.club/cred-pay" target="_blank" rel="noreferrer">
+                                                    <div className="sc-lzqbdr-5 ioROUa">
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/snp-logo.png" className="sc-lzqbdr-6 jLcmwh" />
+                                                        <div className="sc-lzqbdr-7 hgQsWn">
+                                                            <div className="sc-lzqbdr-8 hAZRxv">Scan &amp; MONEY</div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        )}
+                                        {/* Menu 4 - Company */}
+                                        {activeTab === "company" && (
+                                            <div className="sc-lzqbdr-10 eJuiXU">
+                                                <a href="https://cred.club/tap" target="_blank" rel="noreferrer">
+                                                    <div className="sc-lzqbdr-5 ioROUa">
+                                                        <div className="sc-lzqbdr-7 hgQsWn">
+                                                            <div className="sc-lzqbdr-8 hAZRxv">ABOUT</div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="https://cred.club/pay-via-upi" target="_blank" rel="noreferrer">
+                                                    <div className="sc-lzqbdr-5 ioROUa">
+                                                        <div className="sc-lzqbdr-7 hgQsWn">
+                                                            <div className="sc-lzqbdr-8 hAZRxv">CRED</div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                                <a href="https://cred.club/upi-on-credit" target="_blank" rel="noreferrer">
+                                                    <div className="sc-lzqbdr-5 ioROUa">
+                                                        <div className="sc-lzqbdr-7 hgQsWn">
+                                                            <div className="sc-lzqbdr-8 hAZRxv">CAREERS</div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        )}
+                                        {/* Menu 5 - Insider-Perks */}
+                                        {activeTab === "insider-perks" && (
+                                            <div className="sc-lzqbdr-10 eJuiXU">
+                                                <a href="https://cred.club/tap" target="_blank" rel="noreferrer">
+                                                    <div className="sc-lzqbdr-5 ioROUa">
+                                                        <div className="sc-lzqbdr-7 hgQsWn">
+                                                            <div className="sc-lzqbdr-8 hAZRxv">UPGRADS TO UPl</div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/* Mobile Menu */}
+                        <div className="mob-menu">
+                            <MobileMenu />
+                        </div>
                     </nav>
                 </div>
             </div>
