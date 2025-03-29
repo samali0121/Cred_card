@@ -114,22 +114,25 @@ ul {
 
 /* Menu Styling */
 .menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: #000;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  transform: translateY(-100%);
-  transition: transform .3s ease-in-out;
-  z-index: 1000; /* Ensure menu is above other content */
-  overflow-y: auto; /* Change to auto to only show scroll when needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto; /* Change to auto to only show scroll when needed */
 }
-
-
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+}
 
 .menu.show {
     transform: translateY(0);

@@ -61,6 +61,18 @@ export default function Header() {
         }
     };
 
+    // Toggle body class when menu opens/closes
+    useEffect(() => {
+        if (isOpen) {
+            document.body.classList.add('menu-open');
+        } else {
+            document.body.classList.remove('menu-open');
+        }
+
+        return () => {
+            document.body.classList.remove('menu-open');
+        };
+    }, [isOpen]);
     return (
         <div className="header_mian">
             <div id="navbar-wrapper" className="sc-1tidt5-2 eojfPz">
