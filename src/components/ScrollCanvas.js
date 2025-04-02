@@ -15,7 +15,7 @@ const ScrollCanvas = () => {
     useEffect(() => {
         const handleResize = () => {
             setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-            setIsMobile(window.innerWidth <= 768);
+            setIsMobile(window.innerWidth <= 786);
             if (canvasRef.current) {
                 canvasRef.current.width = window.innerWidth;
                 canvasRef.current.height = window.innerHeight;
@@ -55,12 +55,19 @@ const ScrollCanvas = () => {
         const img = images[currentIndex];
         if (img) {
             ctx.clearRect(0, 0, windowSize.width, windowSize.height);
-            const scaleFactor = isMobile ? 0.9 : 1;
             const imgAspect = img.width / img.height;
-            let drawWidth = windowSize.width * scaleFactor;
-            let drawHeight = drawWidth / imgAspect;
-            let offsetX = (windowSize.width - drawWidth) / 2;
-            let offsetY = (windowSize.height - drawHeight) / 2;
+            const canvasAspect = windowSize.width / windowSize.height;
+            let drawWidth, drawHeight, offsetX = 0, offsetY = 0;
+            
+            if (imgAspect > canvasAspect) {
+                drawHeight = windowSize.height;
+                drawWidth = drawHeight * imgAspect;
+                offsetX = (windowSize.width - drawWidth) / 2;
+            } else {
+                drawWidth = windowSize.width;
+                drawHeight = drawWidth / imgAspect;
+                offsetY = (windowSize.height - drawHeight) / 2;
+            }
             ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
         }
     };
@@ -76,7 +83,7 @@ const ScrollCanvas = () => {
     return (
         <section ref={containerRef} style={{ height: isMobile ? "300vh" : "500vh" }} className="position-relative">
             <div className="position-sticky top-0 vh-100 w-100 d-flex align-items-center justify-content-center bg-dark">
-                <canvas ref={canvasRef} width={windowSize.width} height={windowSize.height} style={{ width: "100%", height: "100%", touchAction: "none" }} />
+                <canvas ref={canvasRef} width={windowSize.width} height={windowSize.height} style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", touchAction: "none" }} />
                 {!loaded && (
                     <div className="position-absolute text-white text-center">
                         <div className="spinner-border" role="status">
