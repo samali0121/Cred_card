@@ -128,10 +128,10 @@ ul {
     overflow-y: auto; /* Change to auto to only show scroll when needed */
 }
 body.menu-open {
-  overflow: hidden;
-  position: fixed;
-  height: 100%;
-  width: 100%;
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
 }
 
 .menu.show {
@@ -1195,7 +1195,8 @@ Media Quries
         padding: 20px;
     }
     .video-div {
-        min-height: 600px;
+        min-height: 700px;
+        max-height: 700px;
         overflow: hidden;
     }
     .mt_main {
