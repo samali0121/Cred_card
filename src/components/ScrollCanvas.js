@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { useScroll, useTransform, useMotionValueEvent, useInView } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const ScrollCanvas = () => {
@@ -10,6 +10,7 @@ const ScrollCanvas = () => {
     const [loaded, setLoaded] = useState(false);
     const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
     const [isMobile, setIsMobile] = useState(false);
+    const isInView = useInView(containerRef, { once: false, amount: 0.1 });
 
     useEffect(() => {
         const handleResize = () => {
@@ -28,16 +29,16 @@ const ScrollCanvas = () => {
 
     useEffect(() => {
         const loadImages = async () => {
-            const imageArray = [];
-            for (let i = 1; i <= 149; i++) {
-                const img = new Image();
-                img.src = `/assets/fallback/unbilled-${i}.jpg`;
-                await new Promise((resolve, reject) => {
-                    img.onload = resolve;
-                    img.onerror = reject;
-                });
-                imageArray.push(img);
-            }
+            const imageArray = await Promise.all(
+                Array.from({ length: 149 }, (_, i) => {
+                    return new Promise((resolve, reject) => {
+                        const img = new Image();
+                        img.src = `/assets/fallback/unbilled-${i + 1}.jpg`;
+                        img.onload = () => resolve(img);
+                        img.onerror = () => reject(`Failed to load image ${i + 1}`);
+                    });
+                })
+            ).catch((err) => console.error(err));
             setImages(imageArray);
             setLoaded(true);
         };
@@ -54,17 +55,23 @@ const ScrollCanvas = () => {
         const img = images[currentIndex];
         if (img) {
             ctx.clearRect(0, 0, windowSize.width, windowSize.height);
-            const scaleFactor = isMobile ? 0.8 : 1;
+            const scaleFactor = isMobile ? 0.9 : 1;
             const imgAspect = img.width / img.height;
             let drawWidth = windowSize.width * scaleFactor;
             let drawHeight = drawWidth / imgAspect;
-            let offsetX = 0,
-                offsetY = (windowSize.height - drawHeight) / 2;
+            let offsetX = (windowSize.width - drawWidth) / 2;
+            let offsetY = (windowSize.height - drawHeight) / 2;
             ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
         }
     };
 
     useMotionValueEvent(frameIndex, "change", redrawCanvas);
+
+    useEffect(() => {
+        if (isInView) {
+            redrawCanvas(); // Ensure canvas updates when scrolling resumes
+        }
+    }, [isInView]);
 
     return (
         <section ref={containerRef} style={{ height: isMobile ? "300vh" : "500vh" }} className="position-relative">
