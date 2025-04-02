@@ -1,157 +1,54 @@
-"use client";
-import { useEffect, useRef, useState } from "react";
-import { useScroll, useTransform, motion, useMotionValueEvent } from "framer-motion";
-import "bootstrap/dist/css/bootstrap.min.css";
+import { useState, useEffect, useRef } from "react";
 
-const ScrollCanvas = () => {
-    const containerRef = useRef(null);
-    const canvasRef = useRef(null);
-    const [images, setImages] = useState([]);
-    const [loaded, setLoaded] = useState(false);
-    const [windowSize, setWindowSize] = useState({
-        width: 0,
-        height: 0,
-    });
-    const [isMobile, setIsMobile] = useState(false);
+export default function ImageScroll() {
+    const [scrollProgress, setScrollProgress] = useState(0);
+    const scrollRef = useRef(null);
+    const imageCount = 149;
 
-    // Initialize and handle resize
     useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
+        const handleScroll = () => {
+            if (scrollRef.current) {
+                const section = scrollRef.current;
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const windowHeight = window.innerHeight;
+                const scrollY = window.scrollY;
 
-        const handleResize = () => {
-            setWindowSize({
-                width: window.innerWidth,
-                height: window.innerHeight,
-            });
-            checkMobile();
+                // Calculate when the section is in the viewport
+                if (scrollY > sectionTop - windowHeight && scrollY < sectionTop + sectionHeight) {
+                    // Calculate the progress within the section
+                    const relativeScroll = scrollY - (sectionTop - windowHeight);
+                    let progress = relativeScroll / (sectionHeight + windowHeight);
 
-            if (canvasRef.current) {
-                canvasRef.current.width = window.innerWidth;
-                canvasRef.current.height = window.innerHeight;
-                redrawCanvas();
-            }
-        };
+                    // Ensure progress is within 0 and 1
+                    progress = Math.max(0, Math.min(1, progress));
 
-        // Initial setup
-        handleResize();
-        window.addEventListener("resize", handleResize);
-
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
-
-    // Load all images
-    useEffect(() => {
-        const loadImages = async () => {
-            const imageArray = [];
-
-            for (let i = 1; i <= 149; i++) {
-                try {
-                    const img = new Image();
-                    img.src = `/assets/fallback/unbilled-${i}.jpg`;
-                    await new Promise((resolve, reject) => {
-                        img.onload = resolve;
-                        img.onerror = reject;
-                    });
-                    imageArray.push(img);
-                } catch (error) {
-                    console.error(`Error loading image unbilled-${i}.jpg:`, error);
+                    setScrollProgress(progress);
                 }
             }
-
-            setImages(imageArray);
-            setLoaded(true);
         };
 
-        loadImages();
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Initial call to set initial progress
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, []);
 
-    const { scrollYProgress } = useScroll({
-        target: containerRef,
-        offset: ["start start", "end end"],
-    });
-
-    const frameIndex = useTransform(scrollYProgress, [0, 1], [0, 148]);
-
-    const redrawCanvas = () => {
-        if (!loaded || !canvasRef.current) return;
-
-        const ctx = canvasRef.current.getContext("2d");
-        const currentIndex = Math.floor(frameIndex.get());
-        const img = images[currentIndex];
-
-        if (img) {
-            ctx.clearRect(0, 0, windowSize.width, windowSize.height);
-
-            // Mobile-optimized scaling
-            const scaleFactor = isMobile ? 0.8 : 1;
-            const canvasAspect = windowSize.width / windowSize.height;
-            const imgAspect = img.width / img.height;
-
-            let drawWidth,
-                drawHeight,
-                offsetX = 0,
-                offsetY = 0;
-
-            if (imgAspect > canvasAspect) {
-                drawHeight = windowSize.height * scaleFactor;
-                drawWidth = drawHeight * imgAspect;
-                offsetX = (windowSize.width - drawWidth) / 2;
-            } else {
-                drawWidth = windowSize.width * scaleFactor;
-                drawHeight = drawWidth / imgAspect;
-                offsetY = (windowSize.height - drawHeight) / 2;
-            }
-
-            ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-        }
+    const getImageIndex = () => {
+        return Math.min(imageCount, Math.max(1, Math.ceil(scrollProgress * imageCount)));
     };
 
-    // Update canvas when frameIndex changes
-    useMotionValueEvent(frameIndex, "change", redrawCanvas);
-
-    // Opera-specific fix for smooth scrolling
-    useEffect(() => {
-        const isOpera = !!window.opr || !!window.opera || navigator.userAgent.indexOf(" OPR/") >= 0;
-        if (isOpera && containerRef.current) {
-            containerRef.current.style.overflow = "hidden";
-            containerRef.current.style.height = "500vh";
-        }
-    }, []);
+    const imagePath = `/assets/fallback/unbilled-${getImageIndex()}.jpg`; // Assuming webp format for better performance
 
     return (
-        <section
-            ref={containerRef}
-            style={{ height: isMobile ? "300vh" : "500vh" }} // Less scroll space on mobile
-            className="position-relative"
-        >
-            <div className="position-sticky top-0 vh-100 w-100 d-flex align-items-center justify-content-center bg-dark">
-                <canvas
-                    ref={canvasRef}
-                    width={windowSize.width}
-                    height={windowSize.height}
-                    style={{
-                        width: "100%",
-                        height: "100%",
-                        objectFit: "contain",
-                        touchAction: "none", // Prevent touch interference
-                    }}
-                />
-
-                {!loaded && (
-                    <div className="position-absolute text-white text-center">
-                        <div className="spinner-border" role="status">
-                            <span className="visually-hidden">Loading...</span>
-                        </div>
-                        <p className="mt-2">Loading animation...</p>
-                    </div>
-                )}
+        <div ref={scrollRef} style={{ height: "200vh", position: "relative" }}>
+            {" "}
+            {/* Adjust height as needed */}
+            <div style={{ position: "sticky", top: "20%", width: "100%", display: "flex", justifyContent: "center" }}>
+                <img src={imagePath} alt={`Unbilled ${getImageIndex()}`} style={{ maxWidth: "100%", width: "100%", maxHeight: "100vh", objectFit: "cover" }} />
             </div>
-        </section>
+        </div>
     );
-};
-
-export default ScrollCanvas;
+}
