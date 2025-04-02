@@ -11,10 +11,8 @@ const ScrollCanvas = () => {
     const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
     const [isMobile, setIsMobile] = useState(false);
 
-    // Detect if the section is in view
     const isInView = useInView(containerRef, { once: false, amount: 0.1 });
 
-    // Handle window resize
     useEffect(() => {
         const handleResize = () => {
             setWindowSize({ width: window.innerWidth, height: window.innerHeight });
@@ -32,7 +30,6 @@ const ScrollCanvas = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // Load all images
     useEffect(() => {
         const loadImages = async () => {
             const imageArray = await Promise.all(
@@ -53,7 +50,6 @@ const ScrollCanvas = () => {
         loadImages();
     }, []);
 
-    // Scroll animation
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"],
@@ -61,7 +57,6 @@ const ScrollCanvas = () => {
 
     const frameIndex = useTransform(scrollYProgress, [0, 1], [0, 148]);
 
-    // Redraw canvas
     const redrawCanvas = () => {
         if (!loaded || !canvasRef.current) return;
         const ctx = canvasRef.current.getContext("2d");
@@ -92,10 +87,8 @@ const ScrollCanvas = () => {
         }
     };
 
-    // Update canvas when scrolling
     useMotionValueEvent(frameIndex, "change", redrawCanvas);
 
-    // Ensure canvas updates when it's in view
     useEffect(() => {
         if (isInView) {
             redrawCanvas();
@@ -104,7 +97,7 @@ const ScrollCanvas = () => {
 
     return (
         <section ref={containerRef} style={{ height: isMobile ? "300vh" : "500vh" }} className="position-relative">
-            <div className="position-sticky top-0 vh-100 w-100 d-flex align-items-center justify-content-center bg-dark">
+            <div style={{ position: "sticky", top: "0", height: "100vh", width: "100%" }}>
                 <canvas
                     ref={canvasRef}
                     width={windowSize.width}
@@ -116,6 +109,7 @@ const ScrollCanvas = () => {
                         width: "100%",
                         height: "100%",
                         touchAction: "none",
+                        willChange: "transform",
                     }}
                 />
                 {!loaded && (
