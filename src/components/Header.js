@@ -64,13 +64,13 @@ export default function Header() {
     // Toggle body class when menu opens/closes
     useEffect(() => {
         if (isOpen) {
-            document.body.classList.add('menu-open');
+            document.body.classList.add("menu-open");
         } else {
-            document.body.classList.remove('menu-open');
+            document.body.classList.remove("menu-open");
         }
 
         return () => {
-            document.body.classList.remove('menu-open');
+            document.body.classList.remove("menu-open");
         };
     }, [isOpen]);
     return (
@@ -300,7 +300,7 @@ export default function Header() {
                                             <div className="sc-lzqbdr-10 eJuiXU">
                                                 <a href="https://cred.club/tap" target="_blank" rel="noreferrer">
                                                     <div className="sc-lzqbdr-5 ioROUa">
-                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/travel-logo.png" class="sc-lzqbdr-6 jLcmwh" />
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/travel-logo.png" className="sc-lzqbdr-6 jLcmwh" />
                                                         <div className="sc-lzqbdr-7 hgQsWn">
                                                             <div className="sc-lzqbdr-8 hAZRxv">TRAVEL</div>
                                                         </div>
@@ -308,7 +308,7 @@ export default function Header() {
                                                 </a>
                                                 <a href="https://cred.club/pay-via-upi" target="_blank" rel="noreferrer">
                                                     <div className="sc-lzqbdr-5 ioROUa">
-                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/garage-logo.png" class="sc-lzqbdr-6 jLcmwh" />
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/garage-logo.png" className="sc-lzqbdr-6 jLcmwh" />
                                                         <div className="sc-lzqbdr-7 hgQsWn">
                                                             <div className="sc-lzqbdr-8 hAZRxv">GARAGE</div>
                                                         </div>
@@ -316,7 +316,7 @@ export default function Header() {
                                                 </a>
                                                 <a href="https://cred.club/upi-on-credit" target="_blank" rel="noreferrer">
                                                     <div className="sc-lzqbdr-5 ioROUa">
-                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/mint-logo.png" class="sc-lzqbdr-6 jLcmwh" />
+                                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/mint-logo.png" className="sc-lzqbdr-6 jLcmwh" />
                                                         <div className="sc-lzqbdr-7 hgQsWn">
                                                             <div className="sc-lzqbdr-8 hAZRxv">MINT</div>
                                                         </div>

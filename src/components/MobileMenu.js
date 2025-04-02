@@ -10,7 +10,7 @@ export default function MobileMenu() {
                             <div className="mob_menuTab">
                                 <div className="sc-lzqbdr-4 fkxYSv menu-text">what's new</div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M16.8015 8.79492L12.3754 12.5529L7.94935 8.79492L6.5897 9.95752L12.3754 14.8699L18.1611 9.95752L16.8015 8.79492Z" fill="white" fill-opacity="0.6"></path>
+                                    <path d="M16.8015 8.79492L12.3754 12.5529L7.94935 8.79492L6.5897 9.95752L12.3754 14.8699L18.1611 9.95752L16.8015 8.79492Z" fill="white" ></path>
                                 </svg>
                             </div>
                         </button>
@@ -75,7 +75,7 @@ export default function MobileMenu() {
                             <div className="mob_menuTab">
                                 <div className="sc-lzqbdr-4 fkxYSv menu-text">Payments</div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M16.8015 8.79492L12.3754 12.5529L7.94935 8.79492L6.5897 9.95752L12.3754 14.8699L18.1611 9.95752L16.8015 8.79492Z" fill="white" fill-opacity="0.6"></path>
+                                    <path d="M16.8015 8.79492L12.3754 12.5529L7.94935 8.79492L6.5897 9.95752L12.3754 14.8699L18.1611 9.95752L16.8015 8.79492Z" fill="white"></path>
                                 </svg>
                             </div>
                         </button>
@@ -132,7 +132,7 @@ export default function MobileMenu() {
                             <div className="mob_menuTab">
                                 <div className="sc-lzqbdr-4 fkxYSv menu-text">Upgrades</div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M16.8015 8.79492L12.3754 12.5529L7.94935 8.79492L6.5897 9.95752L12.3754 14.8699L18.1611 9.95752L16.8015 8.79492Z" fill="white" fill-opacity="0.6"></path>
+                                    <path d="M16.8015 8.79492L12.3754 12.5529L7.94935 8.79492L6.5897 9.95752L12.3754 14.8699L18.1611 9.95752L16.8015 8.79492Z" fill="white"></path>
                                 </svg>
                             </div>
                         </button>
@@ -142,7 +142,7 @@ export default function MobileMenu() {
                             <div className="sc-lzqbdr-10 eJuiXU">
                                 <a href="https://cred.club/tap" target="_blank" rel="noreferrer">
                                     <div className="sc-lzqbdr-5 ioROUa">
-                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/travel-logo.png" class="sc-lzqbdr-6 jLcmwh" />
+                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/travel-logo.png" className="sc-lzqbdr-6 jLcmwh" />
                                         <div className="sc-lzqbdr-7 hgQsWn">
                                             <div className="sc-lzqbdr-8 hAZRxv">TRAVEL</div>
                                         </div>
@@ -150,7 +150,7 @@ export default function MobileMenu() {
                                 </a>
                                 <a href="https://cred.club/pay-via-upi" target="_blank" rel="noreferrer">
                                     <div className="sc-lzqbdr-5 ioROUa">
-                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/garage-logo.png" class="sc-lzqbdr-6 jLcmwh" />
+                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/garage-logo.png" className="sc-lzqbdr-6 jLcmwh" />
                                         <div className="sc-lzqbdr-7 hgQsWn">
                                             <div className="sc-lzqbdr-8 hAZRxv">GARAGE</div>
                                         </div>
@@ -158,7 +158,7 @@ export default function MobileMenu() {
                                 </a>
                                 <a href="https://cred.club/upi-on-credit" target="_blank" rel="noreferrer">
                                     <div className="sc-lzqbdr-5 ioROUa">
-                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/mint-logo.png" class="sc-lzqbdr-6 jLcmwh" />
+                                        <img src="https://web-images.credcdn.in/v2/_next/assets/images/navbar/mint-logo.png" className="sc-lzqbdr-6 jLcmwh" />
                                         <div className="sc-lzqbdr-7 hgQsWn">
                                             <div className="sc-lzqbdr-8 hAZRxv">MINT</div>
                                         </div>
@@ -189,7 +189,7 @@ export default function MobileMenu() {
                             <div className="mob_menuTab">
                                 <div className="sc-lzqbdr-4 fkxYSv menu-text">Company</div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M16.8015 8.79492L12.3754 12.5529L7.94935 8.79492L6.5897 9.95752L12.3754 14.8699L18.1611 9.95752L16.8015 8.79492Z" fill="white" fill-opacity="0.6"></path>
+                                    <path d="M16.8015 8.79492L12.3754 12.5529L7.94935 8.79492L6.5897 9.95752L12.3754 14.8699L18.1611 9.95752L16.8015 8.79492Z" fill="white"></path>
                                 </svg>
                             </div>
                         </button>
@@ -235,7 +235,7 @@ export default function MobileMenu() {
                             <div className="mob_menuTab">
                                 <div className="sc-lzqbdr-4 fkxYSv menu-text">Insider Perks</div>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                    <path d="M16.8015 8.79492L12.3754 12.5529L7.94935 8.79492L6.5897 9.95752L12.3754 14.8699L18.1611 9.95752L16.8015 8.79492Z" fill="white" fill-opacity="0.6"></path>
+                                    <path d="M16.8015 8.79492L12.3754 12.5529L7.94935 8.79492L6.5897 9.95752L12.3754 14.8699L18.1611 9.95752L16.8015 8.79492Z" fill="white"></path>
                                 </svg>
                             </div>
                         </button>
@@ -252,7 +252,6 @@ export default function MobileMenu() {
                                                     <path
                                                         d="M16.8015 8.79492L12.3754 12.5529L7.94935 8.79492L6.5897 9.95752L12.3754 14.8699L18.1611 9.95752L16.8015 8.79492Z"
                                                         fill="white"
-                                                        fill-opacity="0.6"
                                                     ></path>
                                                 </svg>
                                             </div>
