@@ -804,6 +804,10 @@ canvas {
 .mob-flip {
     height: 60%;
 }
+.flip-canvas {
+    height: auto;
+    object-fit: contain;
+}
 /* ====================================================================================================
 Media Quries
 ==================================================================================================== */
@@ -1179,8 +1183,9 @@ Media Quries
     .eojfPz {
         padding: 64px 10px 0 29px;
     }
-    .mob-flip {
+    .flip-canvas {
         height: 100%;
+        object-fit: cover;
     }
 }
 @media only screen and (max-width: 768px) {

@@ -1,10 +1,8 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, useMotionValueEvent } from "framer-motion";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 const TOTAL_FRAMES = 194;
-const MOBILE_FRAME_COUNT = 194;
 const IMAGE_PATH = "/assets/smart-card/ss-";
 
 const MobileFlip = () => {
@@ -12,152 +10,118 @@ const MobileFlip = () => {
     const canvasRef = useRef(null);
     const [images, setImages] = useState([]);
     const [loaded, setLoaded] = useState(false);
-    const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
-    const [isMobile, setIsMobile] = useState(false);
-    const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
+    const [windowSize, setWindowSize] = useState({
+        width: typeof window !== "undefined" ? window.innerWidth : 0,
+        height: typeof window !== "undefined" ? window.innerHeight : 0,
+    });
 
-    // Handle resizing & detect mobile
-    useEffect(() => {
-        const handleResize = () => {
-            const mobileCheck = window.innerWidth <= 768;
-            setIsMobile(mobileCheck);
-
-            setWindowSize({
-                width: window.innerWidth,
-                height: window.innerHeight,
-            });
-
-            if (canvasRef.current && images.length > 0) {
-                const img = images[0];
-                if (img) {
-                    setImageDimensions({
-                        width: img.width,
-                        height: img.height,
-                    });
-                }
-                redrawCanvas();
-            }
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, [images]);
-
-    // Optimized image loading
+    // Load all images
     useEffect(() => {
         const loadImages = async () => {
-            const totalFrames = isMobile ? MOBILE_FRAME_COUNT : TOTAL_FRAMES;
-            const imageArray = new Array(totalFrames);
-
-            await Promise.all(
-                Array.from({ length: totalFrames }, (_, i) => {
-                    return new Promise((resolve, reject) => {
-                        const img = new Image();
-                        img.src = `${IMAGE_PATH}${i + 1}.jpg`;
-                        img.onload = () => {
-                            imageArray[i] = img;
-                            if (i === 0) {
-                                setImageDimensions({
-                                    width: img.width,
-                                    height: img.height,
-                                });
-                            }
-                            resolve();
-                        };
-                        img.onerror = reject;
-                    });
-                })
-            );
-
-            setImages(imageArray);
+            const imagePromises = [];
+            for (let i = 1; i <= TOTAL_FRAMES; i++) {
+                const img = new Image();
+                img.src = `${IMAGE_PATH}${i}.jpg`;
+                imagePromises.push(
+                    new Promise((resolve) => {
+                        img.onload = resolve;
+                    })
+                );
+            }
+            await Promise.all(imagePromises);
             setLoaded(true);
         };
 
         loadImages();
-    }, [isMobile]);
+    }, []);
 
-    // Scroll animation logic
+    // Handle resize
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        };
+
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    // Scroll animation
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"],
     });
 
-    const frameIndex = useTransform(scrollYProgress, [0, 1], [0, images.length - 1]);
+    const frameIndex = useTransform(scrollYProgress, [0, 1], [1, TOTAL_FRAMES]);
 
-    // Calculate optimal dimensions for mobile
-    const getMobileDimensions = () => {
-        if (!imageDimensions.width || !imageDimensions.height) return { width: 0, height: 0 };
-
-        const targetWidth = Math.min(windowSize.width * 0.9, 400); // Max 400px or 90% of screen width
-        const scale = targetWidth / imageDimensions.width;
-        const height = imageDimensions.height * scale;
-
-        return {
-            width: targetWidth,
-            height: height,
-        };
-    };
-
-    // Canvas redraw function
-    const redrawCanvas = () => {
-        if (!loaded || !canvasRef.current || images.length === 0) return;
+    // Draw current frame
+    useMotionValueEvent(frameIndex, "change", (latest) => {
+        if (!canvasRef.current || !loaded) return;
 
         const ctx = canvasRef.current.getContext("2d");
-        ctx.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+        const currentFrame = Math.min(TOTAL_FRAMES, Math.max(1, Math.floor(latest)));
+        const img = new Image();
+        img.src = `${IMAGE_PATH}${currentFrame}.jpg`;
 
-        const index = Math.min(images.length - 1, Math.max(0, Math.floor(frameIndex.get())));
-        const img = images[index];
+        img.onload = () => {
+            // Match CRED's exact scaling behavior
+            const scale =
+                windowSize.width <= 768 ? Math.min(windowSize.width / img.width, windowSize.height / img.height) * 0.9 : Math.min(windowSize.width / img.width, windowSize.height / img.height) * 0.7;
 
-        if (!img) return;
+            const width = img.width * scale;
+            const height = img.height * scale;
 
-        if (isMobile) {
-            const { width, height } = getMobileDimensions();
-            const offsetX = (windowSize.width - width) / 2;
-            const offsetY = (windowSize.height - height) / 2;
+            canvasRef.current.width = width;
+            canvasRef.current.height = height;
 
-            ctx.drawImage(img, offsetX, offsetY, width, height);
-        } else {
-            // Desktop version
-            const scaleFactor = 0.8;
-            const imgWidth = img.width * scaleFactor;
-            const imgHeight = img.height * scaleFactor;
-            const offsetX = (windowSize.width - imgWidth) / 1;
-            const offsetY = (windowSize.height - imgHeight) / 1;
-
-            ctx.drawImage(img, offsetX, offsetY, imgWidth, imgHeight);
-        }
-    };
-
-    useMotionValueEvent(frameIndex, "change", redrawCanvas);
+            ctx.clearRect(0, 0, width, height);
+            ctx.drawImage(img, 0, 0, width, height);
+        };
+    });
 
     return (
         <section
             ref={containerRef}
             style={{
-                height: isMobile ? "200vh" : "500vh",
-                marginBottom: isMobile ? "20px" : "0",
+                height: `${TOTAL_FRAMES * 5}vh`,
+                position: "relative",
             }}
-            className="position-relative"
         >
-            <div className="position-sticky top-0 vh-100 w-100 d-flex align-items-center justify-content-center">
+            <div
+                style={{
+                    position: "sticky",
+                    top: 0,
+                    height: "100vh",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    overflow: "hidden",
+                }}
+            >
                 <canvas
-                    className="mob-flip"
+                    className="flip-canvas"
                     ref={canvasRef}
-                    width={windowSize.width}
-                    height={windowSize.height}
                     style={{
-                        width: "100%",
-                        objectFit: "contain",
+                        width: "auto",
+                        maxWidth: "100%",
+                        maxHeight: "100vh",
                     }}
                 />
 
                 {!loaded && (
-                    <div className="position-absolute text-white text-center">
+                    <div
+                        style={{
+                            position: "absolute",
+                            color: "white",
+                            textAlign: "center",
+                        }}
+                    >
                         <div className="spinner-border" role="status">
                             <span className="visually-hidden">Loading...</span>
                         </div>
-                        <p className="mt-2">Loading animation...</p>
+                        <p style={{ marginTop: "1rem" }}>Loading animation...</p>
                     </div>
                 )}
             </div>
@@ -166,13 +130,3 @@ const MobileFlip = () => {
 };
 
 export default MobileFlip;
-
-// import React from "react";
-
-// export default function MobileFlip() {
-//     return (
-//         <div className="mob-flipMain">
-//             <img className="w-100" src="/assets/smart-card/ss-194.jpg" alt="image" />
-//         </div>
-//     );
-// }
