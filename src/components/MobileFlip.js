@@ -8,6 +8,7 @@
 //     );
 // }
 
+
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, useMotionValueEvent } from "framer-motion";
@@ -15,7 +16,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const TOTAL_FRAMES = 194;
 const MOBILE_FRAME_COUNT = 194;
-const IMAGE_PATH = "/assets/smart-card/ss-1-";
+const IMAGE_PATH = "/assets/smart-card/ss-";
 
 const MobileFlip = () => {
     const containerRef = useRef(null);
