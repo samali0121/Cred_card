@@ -3,18 +3,17 @@ import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const TOTAL_FRAMES = 194;
-const MOBILE_FRAME_COUNT = 194;
-const IMAGE_PATH = "/assets/smart-card/ss-";
+const TOTAL_FRAMES = 149;
+const MOBILE_FRAME_COUNT = 140;
+const IMAGE_PATH = "/assets/fallback/unbilled-";
 
-const MobileFlip = () => {
+const ScrollCanvas = () => {
     const containerRef = useRef(null);
     const canvasRef = useRef(null);
     const [images, setImages] = useState([]);
     const [loaded, setLoaded] = useState(false);
     const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
     const [isMobile, setIsMobile] = useState(false);
-    const [imageDimensions, setImageDimensions] = useState({ width: 0, height: 0 });
 
     // Handle resizing & detect mobile
     useEffect(() => {
@@ -27,14 +26,9 @@ const MobileFlip = () => {
                 height: window.innerHeight,
             });
 
-            if (canvasRef.current && images.length > 0) {
-                const img = images[0];
-                if (img) {
-                    setImageDimensions({
-                        width: img.width,
-                        height: img.height,
-                    });
-                }
+            if (canvasRef.current) {
+                canvasRef.current.width = window.innerWidth;
+                canvasRef.current.height = window.innerHeight;
                 redrawCanvas();
             }
         };
@@ -42,7 +36,7 @@ const MobileFlip = () => {
         handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-    }, [images]);
+    }, []);
 
     // Optimized image loading
     useEffect(() => {
@@ -57,12 +51,6 @@ const MobileFlip = () => {
                         img.src = `${IMAGE_PATH}${i + 1}.jpg`;
                         img.onload = () => {
                             imageArray[i] = img;
-                            if (i === 0) {
-                                setImageDimensions({
-                                    width: img.width,
-                                    height: img.height,
-                                });
-                            }
                             resolve();
                         };
                         img.onerror = reject;
@@ -85,21 +73,7 @@ const MobileFlip = () => {
 
     const frameIndex = useTransform(scrollYProgress, [0, 1], [0, images.length - 1]);
 
-    // Calculate optimal dimensions for mobile
-    const getMobileDimensions = () => {
-        if (!imageDimensions.width || !imageDimensions.height) return { width: 0, height: 0 };
-
-        const targetWidth = isMobile ? windowSize.width : windowSize.width * 0.95; // Use 100% of screen width for better mobile display
-        const scale = targetWidth / imageDimensions.width;
-        const height = imageDimensions.height * scale;
-
-        return {
-            width: targetWidth,
-            height: height,
-        };
-    };
-
-    // Canvas redraw function with mobile-specific improvements
+    // Canvas redraw function
     const redrawCanvas = () => {
         if (!loaded || !canvasRef.current || images.length === 0) return;
 
@@ -111,46 +85,27 @@ const MobileFlip = () => {
 
         if (!img) return;
 
-        if (isMobile) {
-            const { width, height } = getMobileDimensions();
-            const offsetX = (windowSize.width - width) / 1;
-            const offsetY = 20; // Small top margin for mobile
+        const scaleFactor = isMobile ? 0.9 : 1;
+        const imgWidth = img.width * scaleFactor;
+        const imgHeight = img.height * scaleFactor;
+        const offsetX = (canvasRef.current.width - imgWidth) / 2;
+        const offsetY = (canvasRef.current.height - imgHeight) / 2;
 
-            // Improve image quality on mobile
-            ctx.imageSmoothingEnabled = true;
-            ctx.imageSmoothingQuality = "high";
-            ctx.drawImage(img, offsetX, offsetY, width, height);
-        } else {
-            // Keep original desktop drawing logic
-            const scaleFactor = 0.8;
-            const imgWidth = img.width * scaleFactor;
-            const imgHeight = img.height * scaleFactor;
-            const offsetX = (windowSize.width - imgWidth) / 2;
-            const offsetY = (windowSize.height - imgHeight) / 1;
-
-            ctx.drawImage(img, offsetX, offsetY, imgWidth, imgHeight);
-        }
+        ctx.drawImage(img, offsetX, offsetY, imgWidth, imgHeight);
     };
 
     useMotionValueEvent(frameIndex, "change", redrawCanvas);
 
     return (
-        <section
-            ref={containerRef}
-            style={{
-                height: isMobile ? "200vh" : "500vh", // Keep your original height values
-                marginBottom: isMobile ? "20px" : "0",
-            }}
-            className="position-relative"
-        >
+        <section ref={containerRef} style={{ height: isMobile ? "200vh" : "500vh" }} className="position-relative">
             <div className="position-sticky top-0 vh-100 w-100 d-flex align-items-center justify-content-center">
                 <canvas
-                    className="mob-flip" // Keep your original class
                     ref={canvasRef}
                     width={windowSize.width}
                     height={windowSize.height}
                     style={{
                         width: "100%",
+                        height: "100%",
                         objectFit: "contain",
                     }}
                 />
@@ -168,14 +123,4 @@ const MobileFlip = () => {
     );
 };
 
-export default MobileFlip;
-
-// import React from "react";
-
-// export default function MobileFlip() {
-//     return (
-//         <div className="mob-flipMain">
-//             <img className="w-100" src="/assets/smart-card/ss-194.jpg" alt="image" />
-//         </div>
-//     );
-// }
+export default ScrollCanvas;
