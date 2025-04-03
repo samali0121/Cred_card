@@ -4,7 +4,7 @@ import { useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const TOTAL_FRAMES = 149;
-const MOBILE_FRAME_COUNT = 50;
+const MOBILE_FRAME_COUNT = 140;
 const IMAGE_PATH = "/assets/fallback/unbilled-";
 
 const ScrollCanvas = () => {
