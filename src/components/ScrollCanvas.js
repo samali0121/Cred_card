@@ -98,7 +98,7 @@ const ScrollCanvas = () => {
 
     return (
         <section ref={containerRef} style={{ height: isMobile ? "200vh" : "500vh" }} className="position-relative">
-            <div className="position-relative top-0 vh-100 w-100 d-flex align-items-center justify-content-center bg-dark">
+            <div className="position-sticky top-0 vh-100 w-100 d-flex align-items-center justify-content-center bg-dark">
                 <canvas
                     ref={canvasRef}
                     width={windowSize.width}
@@ -107,7 +107,6 @@ const ScrollCanvas = () => {
                         width: "100%",
                         height: "100%",
                         objectFit: "contain",
-                        touchAction: "none",
                     }}
                 />
 
