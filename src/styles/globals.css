@@ -969,6 +969,28 @@ canvas {
     -webkit-box-align: center;
     align-items: center;
     color: rgba(255, 255, 255, 0.7);
+    background: #000000;
+}
+.faqs_main .accordion-button:not(.collapsed) {
+    background: #000000 !important;
+    border: none !important;
+    border-radius: 0 !important;
+}
+.accordion-button:focus {
+    box-shadow: none !important;
+}
+.faqs_main .accordion-button:not(.collapsed):after {
+    background-image: url("/assets/arrow-up.svg") !important;
+}
+.faqs_main .accordion-button:after {
+    background-image: url("/assets/arrow-donw.svg") !important;
+}
+.faqs_main .accordion-button:not(.collapsed) {
+    color: #ffffff !important;
+    border-radius: 0 !important;
+}
+.faqs_main .accordion-body {
+    background: #000000 !important;
 }
 .ekFkoD {
     font-family: "Gilroy-Regular", sans-serif;
@@ -1517,9 +1539,11 @@ Media Quries
     }
     .faqs_main .accordion-button.collapsed {
         font-size: 15.12px !important;
+        border-radius: 0 !important;
     }
     .faqs_main .accordion-button:not(.collapsed) {
         font-size: 15.12px !important;
+        border-radius: 0 !important;
     }
     .ekFkoD {
         font-size: 16px;
