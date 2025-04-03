@@ -1,5 +1,12 @@
 @import url("https://fonts.cdnfonts.com/css/gilroy-bold");
 
+@font-face {
+    font-family: "denton-bold";
+    src: url("/font/denton-bold.woff") format("woff2"), url("/font/denton-bold.woff2") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -33,13 +40,16 @@ ul {
 .mob-menu {
     display: none;
 }
+.flip_mob {
+    display: none;
+}
 /* ======================= Headings ============================= */
 .head-1 {
     background: linear-gradient(170deg, rgb(0, 0, 0), rgb(85, 85, 85)) text;
     -webkit-text-fill-color: transparent;
     padding: 4px 0px;
     white-space: pre-wrap;
-    font-family: denton;
+    font-family: "denton-bold";
     font-size: 88px;
     font-weight: 800;
     letter-spacing: -0.6px;
@@ -486,7 +496,7 @@ body.menu-open {
     -webkit-text-fill-color: transparent;
 }
 .fquCfu {
-    font-family: denton;
+    font-family: "denton-bold";
     font-size: 67px;
     font-weight: 800;
     letter-spacing: -0.3px;
@@ -586,7 +596,7 @@ video {
 }
 .footer_main {
     background: #000000;
-    padding: 50px 0;
+    padding: 10px 0;
 }
 .f-logo img {
     width: 100px;
@@ -804,11 +814,207 @@ canvas {
 .mob-flip {
     height: 60%;
 }
-.flip-canvas {
+/* Data Protect */
+.kkfHeq {
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    overflow-x: hidden;
+    width: 100vw;
+}
+.bTEqWy {
+    display: flex;
+    padding: 125px 125px 0 125px;
+}
+.mshjJ {
+    position: absolute;
+    width: 85%;
+    background: rgb(207, 207, 207);
+    height: 2px;
+}
+.VzfKH {
+    margin-top: 50px;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    display: flex;
+    text-align: center;
+}
+.kQQkFl {
+    width: 60%;
+    text-align: left;
+}
+.jidhBR {
+    width: 70px;
+    height: 70px;
+}
+.ghNafr {
+    margin-bottom: calc(20px);
+}
+.bWosiJ {
+    font-family: "denton-bold";
+    font-size: 76px;
+    letter-spacing: -0.4px;
+    line-height: 70px;
+    max-width: 70%;
+}
+.hTFIyf {
+    background: linear-gradient(170deg, rgb(0, 0, 0), rgb(85, 85, 85)) text;
+    -webkit-text-fill-color: transparent;
+}
+.uyHJB {
+    width: 40%;
+    text-align: left;
+}
+.eLnQK {
+    font-family: "Gilroy-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: initial;
+    letter-spacing: 0.6px;
+    line-height: 36px;
+    opacity: 0.6;
+    white-space: pre-line;
+}
+.eLnQK {
+    font-family: "Gilroy-Regular", sans-serif;
+    font-size: 20px;
+    font-weight: initial;
+    letter-spacing: 0.6px;
+    line-height: 36px;
+    opacity: 0.6;
+    white-space: pre-line;
+}
+/* Downlaod Cred */
+
+.ialzGb {
+    max-width: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6.96986px);
+    padding: 20px 25px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-color: rgba(0, 0, 0, 0.2);
+    padding: 20px 25px 20px 20px;
+}
+.eLznSh {
+    width: 80px;
+}
+.gEftKE {
+    width: 100%;
+    font-family: "Gilroy-Regular", sans-serif;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: -0.382px;
+    text-align: center;
+    color: #000000;
+    opacity: 0.9;
+    margin-left: 20px;
+}
+.iQNnrD {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    position: initial;
+    visibility: visible;
+}
+.fqHnOB {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+    pointer-events: auto;
+    top: 30%;
+    left: 0;
+}
+.kSMium {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 26%;
+}
+.sc-1pisk27-2.ibYucQ {
+    position: absolute;
+    top: 90%;
+    left: 0;
+    width: 100%;
+}
+.mob-download {
+    display: none;
+}
+/* Footer FAQ Section */
+.faqs_main .accordion-button {
+    font-family: "Gilroy-Regular", sans-serif;
+    cursor: pointer;
+    height: 20vh;
+    font-size: 30px !important;
+    font-weight: 500 !important;
+    line-height: 39.33px;
+    letter-spacing: 8.4px;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.7);
+}
+.ekFkoD {
+    font-family: "Gilroy-Regular", sans-serif;
+    font-size: 31px;
+    font-weight: 600;
+    line-height: 36px;
+    letter-spacing: 0.1px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+}
+.ccXGfa {
+    font-family: "Gilroy-Regular", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 40px;
+    letter-spacing: -0.2px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    opacity: 0.6;
+    margin-top: 60px;
+    padding: 0 0 35px 0;
+}
+.faqs_main {
+    border-bottom: 1px solid #ffffff;
+}
+.faq_fi {
+    padding: 14px 40px 15px 40px;
+}
+.faqs_main .accordion-header:first-child {
+    border-top: none !important;
+}
+.faqs_main .accordion-item {
+    border: none;
+}
+.foot_inn {
+    padding: 50px 0 0 0;
 }
 /* ====================================================================================================
 Media Quries
 ==================================================================================================== */
+
+@media only screen and (max-width: 1440px) {
+    .kSMium {
+        top: 18%;
+    }
+}
 @media only screen and (max-width: 1024px) {
     .mob-menu {
         display: block;
@@ -816,6 +1022,12 @@ Media Quries
         padding-top: 200px;
     }
     .web-menu {
+        display: none;
+    }
+    .flip_mob {
+        display: block;
+    }
+    .flip_web {
         display: none;
     }
     .f-logo img {
@@ -1176,10 +1388,64 @@ Media Quries
     .menu {
         height: 100%;
     }
+    .bTEqWy {
+        padding: 125px 50px 0px 50px;
+    }
+    .bWosiJ {
+        font-size: 56px;
+        letter-spacing: -0.2px;
+        line-height: 54px;
+    }
+    .jidhBR {
+        width: 55px;
+        height: 55px;
+    }
+    .eLnQK {
+        font-size: 16px;
+        letter-spacing: 0.3px;
+        line-height: 32px;
+    }
+    .dv {
+        display: none;
+    }
+    .dd-div {
+        display: none;
+    }
+    .mob-download {
+        display: block;
+        text-align: center;
+        padding: 70px 20px 50px 20px;
+    }
+    .dwn-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #000000;
+        padding: 20px;
+        margin: 0 auto;
+        color: #ffffff;
+        gap: 10px;
+        font-family: "Gilroy-Regular", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    .dbm {
+        display: block;
+    }
+    .db-img {
+        width: 35%;
+    }
 }
 @media only screen and (max-width: 890px) {
     .eojfPz {
         padding: 64px 10px 0 29px;
+    }
+    .kkfHeq {
+        padding: 50px 30px;
     }
     .mob-flip {
         height: 100%;
@@ -1227,8 +1493,47 @@ Media Quries
     .footer-mob {
         padding: 10px;
     }
+    .kQQkFl {
+        width: 100%;
+    }
+    .uyHJB {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .bWosiJ {
+        font-size: 40px;
+        letter-spacing: -0.3px;
+        line-height: 42px;
+    }
+    .eLnQK {
+        font-size: 14px;
+        letter-spacing: 0.1px;
+        line-height: 26px;
+    }
+    .VzfKH {
+        flex-direction: column;
+        -webkit-box-pack: center;
+        justify-content: center;
+    }
+    .faqs_main .accordion-button.collapsed {
+        font-size: 15.12px !important;
+    }
+    .faqs_main .accordion-button:not(.collapsed) {
+        font-size: 15.12px !important;
+    }
+    .ekFkoD {
+        font-size: 16px;
+    }
+    .ccXGfa {
+        font-size: 16px;
+        line-height: 30px;
+    }
 }
-
+@media only screen and (max-width: 600px) {
+    .db-img {
+        width: 100%;
+    }
+}
 @media only screen and (max-width: 475px) {
     .iVMOIf {
         display: flex;

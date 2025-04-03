@@ -1,9 +1,11 @@
 import React from "react";
+import FaqSec from "./FaqSec";
 
 export default function Footer() {
     return (
         <div className="footer">
             <div className="footer_main">
+                <FaqSec />
                 <div className="foot_inn">
                     <div className="container">
                         {/* Web Footer */}
