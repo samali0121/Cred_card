@@ -1,21 +1,10 @@
-// import React from "react";
-
-// export default function Perk() {
-//     return (
-//         <div className="park_main">
-//             <img className="w-100" src="/assets/perks/perks-195.jpg" alt="image" />
-//         </div>
-//     );
-// }
-
-
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const TOTAL_FRAMES = 149;
-const MOBILE_FRAME_COUNT = 140;
+const TOTAL_FRAMES = 338;
+const MOBILE_FRAME_COUNT = 100;
 const IMAGE_PATH = "/assets/perks/perks-";
 
 const Perk = () => {
@@ -135,3 +124,13 @@ const Perk = () => {
 };
 
 export default Perk;
+
+// import React from "react";
+
+// export default function Perk() {
+//     return (
+//         <div className="park_main">
+//             <img className="w-100" src="/assets/perks/perks-195.jpg" alt="image" />
+//         </div>
+//     );
+// }
